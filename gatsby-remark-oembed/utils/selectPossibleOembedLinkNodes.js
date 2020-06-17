@@ -2,7 +2,11 @@ const select = require("unist-util-select");
 
 const selectPossibleOembedLinkNodes = (markdownAST, usePrefix = false) => {
   if (!usePrefix) {
-    return select(markdownAST, "paragraph link:only-child");
+    return select(markdownAST, "paragraph link:only-child")
+      .filter(node =>
+        node.title === null &&
+        node.children.length === 1 &&
+        node.children[0].value === node.url);
   } else {
     const inlineCodeNodes = select(markdownAST, "inlineCode");
     const selectedNodes = [];
