@@ -5,7 +5,7 @@ const {
   fetchOembed,
   getProviderEndpointForLinkUrl,
   selectPossibleOembedLinkNodes,
-  tranformsLinkNodeToOembedNode,
+  transformLinkNodeToOembedNode,
   logResults,
   getProviders
 } = require("./utils");
@@ -38,7 +38,7 @@ const processNode = async (node, providers) => {
     const endpoint = getProviderEndpointForLinkUrl(node.url, providers);
     if (endpoint.url) {
       const oembedResponse = await fetchOembed(endpoint);
-      return tranformsLinkNodeToOembedNode(node, oembedResponse);
+      return transformLinkNodeToOembedNode(node, oembedResponse);
     }
   } catch (error) {
     error.url = node.url;

@@ -6,7 +6,7 @@ const filterProviderKeys = require("./filterProviderKeys");
 const filterProviders = require("./filterProviders");
 const getProviderEndpointForLinkUrl = require("./getProviderEndpointForLinkUrl");
 const selectPossibleOembedLinkNodes = require("./selectPossibleOembedLinkNodes");
-const tranformsLinkNodeToOembedNode = require("./tranformsLinkNodeToOembedNode");
+const transformLinkNodeToOembedNode = require("./transformLinkNodeToOembedNode");
 const logResults = require("./logResults");
 const getProviders = require('./getProviders')
 
@@ -18,6 +18,6 @@ exports.filterProviderKeys = filterProviderKeys;
 exports.getProviderEndpointForLinkUrl = getProviderEndpointForLinkUrl;
 exports.fetchOembed = fetchOembed;
 exports.selectPossibleOembedLinkNodes = selectPossibleOembedLinkNodes;
-exports.tranformsLinkNodeToOembedNode = tranformsLinkNodeToOembedNode;
+exports.transformLinkNodeToOembedNode = transformLinkNodeToOembedNode;
 exports.logResults = logResults;
 exports.getProviders = getProviders;
