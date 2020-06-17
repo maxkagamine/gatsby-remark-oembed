@@ -1,4 +1,4 @@
-const tranformsLinkNodeToOembedNode = (node, oembedResult) => {
+const transformLinkNodeToOembedNode = (node, oembedResult) => {
   if (oembedResult.html) {
     node.type = "html";
     node.value = oembedResult.html;
@@ -9,8 +9,8 @@ const tranformsLinkNodeToOembedNode = (node, oembedResult) => {
       <img src="${oembedResult.url}"
         class="gatsby-remark-oembed-photo"
         width="${oembedResult.width}"
-        height="${oembedResult.width}"
-        title="${oembedResult.title}"/>
+        height="${oembedResult.height}"
+        alt="${oembedResult.title}"/>
     `;
     delete node.children;
   }
@@ -18,4 +18,4 @@ const tranformsLinkNodeToOembedNode = (node, oembedResult) => {
   return node;
 };
 
-module.exports = tranformsLinkNodeToOembedNode;
+module.exports = transformLinkNodeToOembedNode;
